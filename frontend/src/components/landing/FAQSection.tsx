@@ -32,24 +32,38 @@ export function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="faq" className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 text-center mb-16">
-          Questions fréquentes
-        </h2>
+        <div className="text-center mb-16">
+          <span className="text-blue-600 font-bold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full bg-white border border-blue-100 shadow-sm">
+            FAQ
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">
+            Questions fréquentes
+          </h2>
+        </div>
         <div className="space-y-4">
           {faqs.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <div 
+              key={i} 
+              className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm card-hover hover:border-blue-400/40"
+            >
               <button
                 className="w-full flex items-center justify-between p-6 text-left font-bold text-slate-900 hover:bg-slate-50 transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 {item.q}
-                <span className={`ml-4 text-blue-600 transition-transform ${open === i ? "rotate-180" : ""}`}>▾</span>
+                <span 
+                  className={`ml-4 w-8 h-8 rounded-full flex items-center justify-center text-blue-600 bg-blue-50 transition-all duration-300 ${open === i ? "rotate-180 bg-blue-600 text-white scale-110" : ""}`}
+                >▾</span>
               </button>
-              {open === i && (
-                <div className="px-6 pb-6 text-slate-600">{item.a}</div>
-              )}
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${open === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed">{item.a}</div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
