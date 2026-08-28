@@ -1,0 +1,20 @@
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/.env
+frontend/.env.local
+
+# Backend
+backend/vendor
+backend/storage/logs
+backend/storage/framework/cache
+backend/storage/framework/sessions
+backend/storage/framework/views
+backend/bootstrap/cache
+
+# General
+.git
+.gitignore
+docker-data
+*.md

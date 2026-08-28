@@ -1,0 +1,40 @@
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+*.env.local
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+frontend/.env*
+
+# PHP / Laravel / Backend
+backend/vendor/
+backend/.phpunit.result.cache
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+backend/.idea/
+backend/.vscode/
+!backend/vendor/  # (see note: vendor kept via Docker, see README)
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+docker-data/
