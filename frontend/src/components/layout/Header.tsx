@@ -12,21 +12,19 @@ export function Header() {
             Micro<span className="text-blue-600">Solu</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <Link href="/" className="hover:text-blue-600 transition-colors">
-            Accueil
-          </Link>
-
-          <Link href="/demands" className="hover:text-blue-600 transition-colors">
-            Soumettre un problème
-          </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <Link href="#comment-ca-marche" className="hover:text-blue-600 transition-colors">Comment ça marche</Link>
+          <Link href="#nos-solutions" className="hover:text-blue-600 transition-colors">Nos solutions</Link>
+          <Link href="#subventions" className="hover:text-blue-600 transition-colors">Subventions</Link>
+          <Link href="#pourquoi-nous" className="hover:text-blue-600 transition-colors">Pourquoi nous</Link>
+          <Link href="#faq" className="hover:text-blue-600 transition-colors">FAQ</Link>
         </nav>
         <div className="flex items-center gap-4">
           <Link
             href="/demands"
             className="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition-colors shadow-sm shadow-blue-500/20"
           >
-            Décrire mon besoin
+            Demander un diagnostic gratuit
           </Link>
         </div>
       </div>
