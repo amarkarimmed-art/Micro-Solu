@@ -25,7 +25,7 @@ export function ProblemSection() {
           {symptoms.map((item, i) => (
             <div 
               key={i} 
-              className="group flex gap-5 p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 backdrop-blur-sm card-hover hover:border-blue-500/40 hover:bg-white active:scale-[0.98] transition-all duration-300"
+              className="group flex flex-col items-center text-center p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 backdrop-blur-sm card-hover hover:border-blue-500/40 hover:bg-white active:scale-[0.98] transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-blue-100/60 text-blue-600 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                 {item.icon}

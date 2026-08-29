@@ -37,7 +37,7 @@ export function WhyUsSection() {
           {points.map((p, i) => (
             <div 
               key={i} 
-              className="group flex gap-5 p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 card-hover hover:border-blue-400/50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 active:scale-[0.98] transition-all duration-300"
+              className="group flex flex-col items-center text-center p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 card-hover hover:border-blue-400/50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 active:scale-[0.98] transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:-rotate-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                 {p.icon}

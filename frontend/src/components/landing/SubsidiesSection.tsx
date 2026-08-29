@@ -32,7 +32,7 @@ export function SubsidiesSection() {
               key={i} 
               className="group p-6 rounded-3xl bg-white/10 border border-white/15 backdrop-blur-md card-hover hover:border-emerald-400/40 active:scale-[0.96]"
             >
-              <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-blue-950 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center text-2xl mb-4 mx-auto group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-blue-950 transition-all duration-300">
                 {b.icon}
               </div>
               <h3 className="font-bold mb-1 text-white">{b.title}</h3>

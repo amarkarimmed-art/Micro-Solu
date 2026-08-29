@@ -34,7 +34,7 @@ export function ValuePropSection() {
               key={i} 
               className="group p-8 rounded-3xl bg-gradient-to-b from-slate-50 to-white border border-slate-200 card-hover hover:border-blue-400/40 hover:shadow-xl hover:shadow-blue-500/5 active:scale-[0.98]"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-3xl mb-5 mx-auto group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                 {b.icon}
               </div>
               <p className="font-medium text-slate-800 leading-relaxed">{b.text}</p>

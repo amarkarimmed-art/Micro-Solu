@@ -58,8 +58,8 @@ export function ProcessSection() {
               key={i} 
               className="group p-6 bg-white rounded-3xl border border-slate-200 shadow-sm card-hover hover:border-blue-400/40 active:scale-[0.97] flex flex-col transition-all duration-300"
             >
-              <div className="relative inline-flex self-start mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white font-bold flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+              <div className="relative inline-flex self-center mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                   {step.icon}
                 </div>
                 <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-bold flex items-center justify-center shadow-md">

@@ -29,7 +29,7 @@ export function SolutionsSection() {
               className="group relative p-8 rounded-3xl bg-white border border-slate-200 overflow-hidden card-hover hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/10 active:scale-[0.97]"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-2xl bg-blue-100/60 text-blue-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-blue-100/60 text-blue-600 flex items-center justify-center text-3xl mb-6 mx-auto group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                 {s.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">{s.title}</h3>
