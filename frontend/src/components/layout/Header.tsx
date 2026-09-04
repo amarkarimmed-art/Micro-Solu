@@ -41,20 +41,8 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA & Mobile Menu Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/demands"
-            className="relative inline-flex items-center justify-center px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-xs sm:text-sm overflow-hidden group shadow-md shadow-blue-500/10 hover:shadow-lg hover:shadow-blue-500/30 transform transition-all duration-300 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap"
-          >
-            {/* Shimmer overlay */}
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-            <span className="relative">
-              <span className="hidden sm:inline">Demander un diagnostic gratuit</span>
-              <span className="sm:hidden">Diagnostic gratuit</span>
-            </span>
-          </Link>
-
+        {/* Mobile Menu Toggle */}
+        <div className="flex items-center">
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
