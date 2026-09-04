@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useNavigation } from "@/context/NavigationContext";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { activeSection, setActiveSection } = useNavigation();
 
   const navLinks = [
     { href: "#comment-ca-marche", label: "Comment ça marche" },
@@ -13,6 +15,8 @@ export function Header() {
     { href: "#pourquoi-nous", label: "Pourquoi nous" },
     { href: "#faq", label: "FAQ" },
   ];
+
+  const sectionNames = ["Accueil", "Constat", "Parcours", "Avantage", "Solutions", "Subventions", "Pourquoi nous", "FAQ", "Contact"];
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
@@ -64,24 +68,19 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-lg border-b border-slate-200/80 px-4 pt-2 pb-5 space-y-1 shadow-xl">
-          {navLinks.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between px-4 py-3 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-blue-50/60 font-medium text-sm transition-all duration-200"
-            >
-              <span>{link.label}</span>
-              <svg className="w-4 h-4 text-slate-400 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          ))}
-        </div>
-      )}
+      {/* Mobile Tabs */}
+      <div className="md:hidden flex items-center overflow-x-auto hide-scrollbar border-b border-slate-200/80 bg-white/95 px-2 py-1">
+        {sectionNames.map((name, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveSection(i)}
+            className={`whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors ${activeSection === i ? "text-blue-600 border-b-2 border-blue-600" : "text-slate-600"}`}
+          >
+            {name}
+          </button>
+        ))}
+      </div>
     </header>
   );
 }
+

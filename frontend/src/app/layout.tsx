@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NavigationProvider } from "@/context/NavigationContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="flex flex-col min-h-screen">
-        <Header />
-        <div className="flex-grow">{children}</div>
-        <FloatingContact />
-        <Footer />
+        <NavigationProvider>
+          <Header />
+          <div className="flex-grow">{children}</div>
+          <FloatingContact />
+          <Footer />
+        </NavigationProvider>
       </body>
     </html>
   );
