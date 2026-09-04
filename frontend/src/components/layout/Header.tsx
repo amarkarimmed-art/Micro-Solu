@@ -12,20 +12,21 @@ export function Header() {
             Micro<span className="text-blue-600 transition-colors duration-300 group-hover:text-blue-500">Solu</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <nav className="flex items-center gap-1.5 sm:gap-6 text-[11px] sm:text-sm font-medium text-slate-600">
           {[
-            { href: "#comment-ca-marche", label: "Comment ça marche" },
-            { href: "#nos-solutions", label: "Nos solutions" },
-            { href: "#subventions", label: "Subventions" },
-            { href: "#pourquoi-nous", label: "Pourquoi nous" },
+            { href: "#comment-ca-marche", label: "Parcours" },
+            { href: "#nos-solutions", label: "Solutions" },
+            { href: "#subventions", label: "Aides" },
+            { href: "#pourquoi-nous", label: "Nous" },
             { href: "#faq", label: "FAQ" },
           ].map((link, i) => (
             <Link
               key={i}
               href={link.href}
-              className="relative py-1 hover:text-blue-600 transition-colors duration-200 group"
+              className="relative py-1 px-1.5 whitespace-nowrap hover:text-blue-600 transition-colors duration-200 group"
             >
-              {link.label}
+              <span className="hidden sm:inline">{link.label === "Parcours" ? "Comment ça marche" : link.label === "Solutions" ? "Nos solutions" : link.label === "Aides" ? "Subventions" : link.label === "Nous" ? "Pourquoi nous" : "FAQ"}</span>
+              <span className="sm:hidden">{link.label}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
@@ -37,7 +38,10 @@ export function Header() {
           >
             {/* Shimmer overlay */}
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-            <span className="relative">Demander un diagnostic gratuit</span>
+            <span className="relative">
+              <span className="hidden sm:inline">Demander un diagnostic gratuit</span>
+              <span className="sm:hidden">Diagnostic</span>
+            </span>
           </Link>
         </div>
       </div>
