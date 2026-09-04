@@ -9,8 +9,8 @@ import { SubsidiesSection } from "@/components/landing/SubsidiesSection";
 import { WhyUsSection } from "@/components/landing/WhyUsSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
-import { HorizontalCarousel } from "@/components/layout/HorizontalCarousel";
 import { useNavigation } from "@/context/NavigationContext";
+import { HorizontalCarousel } from "@/components/layout/HorizontalCarousel";
 
 export default function Home() {
   const { activeSection, setActiveSection } = useNavigation();
@@ -32,12 +32,13 @@ export default function Home() {
       {/* Mobile: Carousel */}
       <div className="md:hidden">
         <HorizontalCarousel 
-          activeSection={activeSection} 
-          onActiveSectionChange={setActiveSection}
+          initialIndex={activeSection}
+          onIndexChange={setActiveSection}
         >
           {sections.map((s, i) => <div key={i} className="h-full">{s.component}</div>)}
         </HorizontalCarousel>
       </div>
+
 
       {/* Desktop: Normal scroll */}
       <div className="hidden md:flex flex-col">

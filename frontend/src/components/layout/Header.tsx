@@ -8,15 +8,17 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeSection, setActiveSection } = useNavigation();
 
-  const navLinks = [
-    { href: "#comment-ca-marche", label: "Comment ça marche" },
-    { href: "#nos-solutions", label: "Nos solutions" },
-    { href: "#subventions", label: "Subventions" },
-    { href: "#pourquoi-nous", label: "Pourquoi nous" },
-    { href: "#faq", label: "FAQ" },
+  const sections = [
+    { name: "Accueil" },
+    { name: "Constat" },
+    { name: "Parcours" },
+    { name: "Avantage" },
+    { name: "Solutions" },
+    { name: "Subventions" },
+    { name: "Pourquoi" },
+    { name: "FAQ" },
+    { name: "Contact" },
   ];
-
-  const sectionNames = ["Accueil", "Constat", "Parcours", "Avantage", "Solutions", "Subventions", "Pourquoi nous", "FAQ", "Contact"];
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
@@ -33,54 +35,46 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-          {navLinks.map((link, i) => (
-            <Link
+          {sections.map((s, i) => (
+            <button
               key={i}
-              href={link.href}
-              className="relative py-1 text-slate-600 hover:text-blue-600 transition-colors duration-200 group"
+              onClick={() => setActiveSection(i)}
+              className={`relative py-1 transition-colors duration-200 ${activeSection === i ? "text-blue-600" : "text-slate-600 hover:text-blue-600"}`}
             >
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
-            </Link>
+              {s.name}
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${activeSection === i ? "w-full" : "w-0 group-hover:w-full"}`} />
+            </button>
           ))}
         </nav>
 
         {/* Mobile Menu Toggle */}
         <div className="flex items-center">
-          {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
             className="md:hidden p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* Mobile Tabs */}
-      <div className="md:hidden flex items-center overflow-x-auto hide-scrollbar border-b border-slate-200/80 bg-white/95 px-2 py-1">
-        {sectionNames.map((name, i) => (
+      {/* Mobile Tab Navigation */}
+      <div className="md:hidden overflow-x-auto flex border-b border-slate-200 bg-white/95 backdrop-blur-md scrollbar-hide">
+        {sections.map((s, i) => (
           <button
             key={i}
             onClick={() => setActiveSection(i)}
-            className={`whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors ${activeSection === i ? "text-blue-600 border-b-2 border-blue-600" : "text-slate-600"}`}
+            className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+              activeSection === i ? "border-blue-600 text-blue-600" : "border-transparent text-slate-600"
+            }`}
           >
-            {name}
+            {s.name}
           </button>
         ))}
       </div>
     </header>
   );
 }
-

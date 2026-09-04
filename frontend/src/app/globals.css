@@ -7,7 +7,14 @@
   }
 }
 
-/* Custom 2026 UX/UI Animations & Effects */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 @keyframes shimmer {
   0% {
