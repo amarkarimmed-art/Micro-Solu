@@ -22,7 +22,7 @@ export function Header() {
             <span className="relative">Demander un diagnostic gratuit</span>
           </Link>
         </div>
-        <nav className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2 sm:gap-6 text-sm font-medium text-slate-600 order-last sm:order-none">
+        <nav className="w-full sm:w-auto grid grid-cols-5 gap-1 sm:flex sm:items-center sm:justify-end sm:gap-6 text-xs sm:text-sm font-medium text-slate-600 order-last sm:order-none">
           {[
             { href: "#comment-ca-marche", label: "Comment ça marche" },
             { href: "#nos-solutions", label: "Nos solutions" },
@@ -33,7 +33,7 @@ export function Header() {
             <Link
               key={i}
               href={link.href}
-              className="relative py-1 whitespace-nowrap text-xs sm:text-sm hover:text-blue-600 transition-colors duration-200 group"
+              className="relative py-1 text-center whitespace-nowrap text-[11px] sm:text-sm hover:text-blue-600 transition-colors duration-200 group px-0.5"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
