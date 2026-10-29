@@ -62,7 +62,7 @@ export function SolutionsSection() {
             Des strates logicielles adaptées à vos contraintes de gestion
           </h2>
           <p className="text-lg text-[#4A6890] leading-relaxed">
-            Plutôt que d&apos;imposer un progiciel lourd et complexe, Normina assemble uniquement les fonctionnalités indispensables à votre rentabilité.
+            Plutôt que d&apos;imposer un progiciel lourd et complexe, Nomira assemble uniquement les fonctionnalités indispensables à votre rentabilité.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export function SolutionsSection() {
                 Votre métier exige un workflow particulier ?
               </h4>
               <p className="text-sm text-[#4A6890]">
-                C&apos;est le cœur de mission de Normina : composer votre outil sur mesure en 4 jours chrono.
+                C&apos;est le cœur de mission de Nomira : composer votre outil sur mesure en 4 jours chrono.
               </p>
             </div>
           </div>

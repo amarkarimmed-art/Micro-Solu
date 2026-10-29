@@ -12,7 +12,7 @@ export const FloatingContact = () => {
         <div className="flex items-center gap-2">
           <NomiraLogo variant="mark" theme="dark" height={18} />
           <span className="text-xs font-bold text-white tracking-wide">
-            Normina Direct
+            Nomira Direct
           </span>
         </div>
         <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-pulse" title="Disponible" />

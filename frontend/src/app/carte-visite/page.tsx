@@ -63,7 +63,7 @@ export default function CarteVisitePage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight mb-4 text-white">
             Carte de Visite{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFA23C] via-[#FF9500] to-[#ED7410]">
-              Officielle Normina
+              Officielle Nomira
             </span>
           </h1>
           <p className="text-[#C3D0E2] text-base sm:text-lg leading-relaxed">
@@ -197,8 +197,8 @@ export default function CarteVisitePage() {
               </div>
               <div>
                 <span className="text-[11px] font-semibold text-[#8FB0DC] uppercase tracking-wider block">Site web</span>
-                <a href="https://www.Normina.ma" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-[#FFA23C] transition-colors">
-                  www.Normina.ma
+                <a href="https://www.nomira.ma" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-[#FFA23C] transition-colors">
+                  www.nomira.ma
                 </a>
               </div>
             </div>
@@ -209,8 +209,8 @@ export default function CarteVisitePage() {
               </div>
               <div>
                 <span className="text-[11px] font-semibold text-[#8FB0DC] uppercase tracking-wider block">Email</span>
-                <a href="mailto:contact@normina.ma" className="text-sm font-semibold text-white hover:text-[#FFA23C] transition-colors">
-                  contact@normina.ma
+                <a href="mailto:contact@nomira.ma" className="text-sm font-semibold text-white hover:text-[#FFA23C] transition-colors">
+                  contact@nomira.ma
                 </a>
               </div>
             </div>

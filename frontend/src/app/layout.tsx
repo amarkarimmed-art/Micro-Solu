@@ -21,19 +21,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.Normina.ma"),
-  title: "Normina — Regagnez vos ressources | Solutions numériques ciblées",
+  metadataBase: new URL("https://www.nomira.ma"),
+  title: "Nomira — Regagnez vos ressources | Solutions numériques ciblées",
   description:
-    "Un problème visé. Un coût en moins. Des micro-solutions logicielles ciblées pour éliminer les tâches chronophages et regagner la rentabilité de votre entreprise. www.Normina.ma",
+    "Un problème visé. Un coût en moins. Des micro-solutions logicielles ciblées pour éliminer les tâches chronophages et regagner la rentabilité de votre entreprise. www.nomira.ma",
   alternates: {
-    canonical: "https://www.Normina.ma",
+    canonical: "https://www.nomira.ma",
   },
   openGraph: {
-    title: "Normina — Regagnez vos ressources",
+    title: "Nomira — Regagnez vos ressources | Solutions numériques ciblées",
     description:
       "Des solutions numériques sur mesure pour éliminer les pertes de temps et les surcoûts opérationnels de votre entreprise.",
-    url: "https://www.Normina.ma",
-    siteName: "Normina",
+    url: "https://www.nomira.ma",
+    siteName: "Nomira",
     locale: "fr_FR",
     type: "website",
     images: [
@@ -41,19 +41,20 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Normina — Regagnez vos ressources | Solutions numériques ciblées",
+        alt: "Nomira",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Normina — Regagnez vos ressources",
+    title: "Nomira — Regagnez vos ressources | Solutions numériques ciblées",
     description: "Un problème visé. Un coût en moins. Des micro-solutions logicielles ciblées.",
     images: ["/og-image.png"],
   },
   icons: {
     icon: [
       { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
@@ -67,10 +68,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Normina",
-  "url": "https://www.Normina.ma",
+  "name": "Nomira",
+  "url": "https://www.nomira.ma",
   "telephone": "+212661574247",
-  "email": "contact@normina.ma",
+  "email": "contact@nomira.ma",
   "description": "Des micro-solutions numériques sur mesure pour éliminer les pertes de temps et les surcoûts opérationnels.",
   "address": {
     "@type": "PostalAddress",
@@ -78,7 +79,7 @@ const jsonLd = {
     "addressCountry": "MA"
   },
   "sameAs": [
-    "https://www.Normina.ma"
+    "https://www.nomira.ma"
   ]
 };
 

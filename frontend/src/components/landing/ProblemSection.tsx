@@ -94,7 +94,7 @@ export function ProblemSection() {
             <NomiraLogo variant="mark" theme="dark" height={32} />
           </div>
           <p className="font-heading text-lg sm:text-xl font-semibold mb-5 text-[#F3F6FA]">
-            « Vous saurez avant de signer ce que vous économisez. C&apos;est l&apos;engagement Normina. »
+            « Vous saurez avant de signer ce que vous économisez. C&apos;est l&apos;engagement Nomira. »
           </p>
           <div className="flex justify-center">
             <Button

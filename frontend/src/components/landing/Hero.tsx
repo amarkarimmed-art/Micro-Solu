@@ -44,7 +44,7 @@ export function Hero() {
           </div>
           <div className="mt-3 flex items-center gap-2 text-xs text-[#8FB0DC]">
             <span className="w-2 h-2 rounded-full bg-[#FF9500] animate-pulse" />
-            <span className="font-semibold text-white tracking-wide">Normina</span>
+            <span className="font-semibold text-white tracking-wide">Nomira</span>
             <span>· Plateforme certifiée · Logiciels ciblés à prix fixe</span>
           </div>
         </div>

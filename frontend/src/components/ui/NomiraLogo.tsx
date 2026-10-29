@@ -235,7 +235,7 @@ export function NomiraLogo({
     return (
       <div
         className={`group/logo inline-flex items-center justify-center select-none ${className}`}
-        aria-label="Normina"
+        aria-label="Nomira"
       >
         {renderMarkSvg()}
       </div>
@@ -251,7 +251,7 @@ export function NomiraLogo({
             ? "bg-[#142030] border-[#3A5C8A]/60 shadow-black/30"
             : "bg-white border-[#E2E9F3] shadow-slate-200/50"
         } ${className}`}
-        aria-label="Normina"
+        aria-label="Nomira"
       >
         {renderMarkSvg()}
       </div>
@@ -277,7 +277,7 @@ export function NomiraLogo({
   return (
     <div
       className={`group/logo inline-flex items-center gap-3.5 select-none ${className}`}
-      aria-label="Normina — Regagnez vos ressources"
+      aria-label="Nomira — Regagnez vos ressources"
     >
       {/* 1. Animated Fluid Vector Mark */}
       <div className="shrink-0">{renderMarkSvg()}</div>
@@ -289,7 +289,7 @@ export function NomiraLogo({
             isDark ? "text-white group-hover/logo:text-white" : "text-[#1A2838]"
           }`}
         >
-          Normina
+          Nomira
         </span>
 
         {isWithSlogan && (
@@ -305,3 +305,4 @@ export function NomiraLogo({
     </div>
   );
 }
+

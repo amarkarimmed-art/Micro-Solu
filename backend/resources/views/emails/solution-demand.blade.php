@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Normina — Confirmation de votre demande de diagnostic</title>
+  <title>Nomira — Confirmation de votre demande de diagnostic</title>
   <style>
     body {
       margin: 0;
@@ -124,8 +124,8 @@
         <table align="center" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td align="center">
-              <a href="https://www.Normina.ma" class="logo-text">
-                Normina
+              <a href="https://www.nomira.ma" class="logo-text">
+                Nomira
               </a>
               <span class="logo-slogan">Regagnez vos ressources</span>
             </td>
@@ -139,7 +139,7 @@
         <p>Bonjour {{ $contact_name ?? 'Monsieur/Madame' }},</p>
         <p>Nous vous confirmons la bonne réception de votre demande pour l&apos;entreprise <strong>{{ $company ?? 'votre organisation' }}</strong>.</p>
         
-        <p>Un consultant technique Normina examine actuellement vos indications afin d&apos;estimer le volume d&apos;heures économisables ainsi que les subventions applicables (jusqu&apos;à 70 %).</p>
+        <p>Un consultant technique Nomira examine actuellement vos indications afin d&apos;estimer le volume d&apos;heures économisables ainsi que les subventions applicables (jusqu&apos;à 70 %).</p>
 
         <div class="recap-box">
           <div class="recap-item">
@@ -172,13 +172,13 @@
       <!-- Branded Footer -->
       <div class="footer">
         <p style="margin: 0 0 8px; font-weight: 600; color: #FFFFFF;">
-          Normina — Regagnez vos ressources
+          Nomira — Regagnez vos ressources
         </p>
         <p style="margin: 0 0 8px;">
           Micro-solutions logicielles ciblées · Déploiement en 4 jours
         </p>
         <p style="margin: 0;">
-          Casablanca · Paris · <a href="https://www.Normina.ma">www.Normina.ma</a> · <a href="mailto:contact@normina.ma">contact@normina.ma</a>
+          Casablanca · Paris · <a href="https://www.nomira.ma">www.nomira.ma</a> · <a href="mailto:contact@nomira.ma">contact@nomira.ma</a>
         </p>
       </div>
     </div>

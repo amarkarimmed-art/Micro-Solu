@@ -45,7 +45,7 @@ export function NomiraDivider({
         </span>
       )}
 
-      {/* Parallel Strata Graphic with the REAL Animated Nomira Brand Logo */}
+      {/* Parallel Strata Graphic with the Official Animated Nomira Brand Logo */}
       <div className="relative flex items-center gap-4">
         {/* Left flowing line */}
         <div
@@ -89,3 +89,4 @@ export function NomiraDivider({
     </div>
   );
 }
+

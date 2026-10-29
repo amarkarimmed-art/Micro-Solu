@@ -118,8 +118,8 @@ export function Footer() {
               </li>
               <li className="pt-2 flex items-center gap-3 bg-[#141F2D] p-2.5 rounded-xl border border-[#3A5C8A]/30">
                 <img
-                  src="/brand/qr-normina.png"
-                  alt="QR Code Normina.ma"
+                  src="/brand/qr-nomira.png"
+                  alt="QR Code nomira.ma"
                   className="w-12 h-12 rounded-lg bg-white p-1 shrink-0"
                 />
                 <div className="text-[11px] leading-tight">

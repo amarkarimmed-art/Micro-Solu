@@ -80,7 +80,7 @@ function DemandFormContent() {
             <div className="flex items-center justify-center gap-4">
               <Link href="/">
                 <Button variant="primary" size="md">
-                  Retour à l&apos;accueil Normina
+                  Retour à l&apos;accueil Nomira
                 </Button>
               </Link>
             </div>

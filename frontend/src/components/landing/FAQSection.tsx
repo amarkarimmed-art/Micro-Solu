@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 export function FAQSection() {
   const faqs = [
     {
-      q: "Combien coûte une micro-solution Normina ?",
+      q: "Combien coûte une micro-solution Nomira ?",
       a: "Chaque projet est chiffré à prix forfaitaire définitif dès le diagnostic initial gratuit. Vous connaissez le montant exact avant tout engagement, sans aucun frais masqué en cours de déploiement.",
     },
     {
@@ -25,7 +25,7 @@ export function FAQSection() {
     },
     {
       q: "Comment fonctionne l'aide et la subvention de l'État ?",
-      a: "Normina effectue un test d'éligibilité immédiat lors du premier échange et monte pour vous le dossier de prise en charge financière.",
+      a: "Nomira effectue un test d'éligibilité immédiat lors du premier échange et monte pour vous le dossier de prise en charge financière.",
     },
     {
       q: "Mon secteur d'activité est très spécifique, est-ce adapté ?",

@@ -183,12 +183,12 @@ export function FinalCTA() {
             <span>💬 WhatsApp Direct : +212 6 61 57 42 47</span>
           </a>
           <a
-            href="https://www.Normina.ma"
+            href="https://www.nomira.ma"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1A2838] border border-[#3A5C8A]/60 text-[#8FB0DC] hover:text-white transition-all shadow-md"
           >
-            <span>🌐 Visitez notre site : www.Normina.ma</span>
+            <span>🌐 Visitez notre site : www.nomira.ma</span>
           </a>
         </div>
       </div>

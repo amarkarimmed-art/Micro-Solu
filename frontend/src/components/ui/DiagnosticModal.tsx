@@ -99,7 +99,7 @@ export function DiagnosticModal({
                 Demande de Diagnostic Transmise
               </h3>
               <p className="text-sm text-[#4A6890] mb-6">
-                Merci <span className="font-semibold text-[#1A2838]">{formData.name}</span>. Un consultant de l&apos;équipe Normina vous contactera sous 24h ouvrées avec un premier chiffrage.
+                Merci <span className="font-semibold text-[#1A2838]">{formData.name}</span>. Un consultant de l&apos;équipe Nomira vous contactera sous 24h ouvrées avec un premier chiffrage.
               </p>
               <Button
                 variant="primary"

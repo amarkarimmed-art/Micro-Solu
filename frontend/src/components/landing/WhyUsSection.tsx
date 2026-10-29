@@ -45,7 +45,7 @@ export function WhyUsSection() {
             <NomiraLogo variant="horizontal" theme="light" height={36} />
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold text-[#1A2838] tracking-tight mb-4">
-            Pourquoi choisir Normina plutôt qu&apos;une agence ou un freelance isolé ?
+            Pourquoi choisir Nomira plutôt qu&apos;une agence ou un freelance isolé ?
           </h2>
           <p className="text-lg text-[#4A6890] leading-relaxed">
             La rigueur d&apos;un éditeur de logiciel, la réactivité d&apos;un partenaire dédié.

@@ -1,16 +1,16 @@
 export const BRANDING = {
-  name: "Normina",
+  name: "Nomira",
   tagline: "Regagnez vos ressources",
   baseline: "Un problème visé. Un coût en moins.",
   shortDescription:
     "Des solutions numériques sur mesure pour éliminer les pertes de temps et les surcoûts opérationnels de votre entreprise.",
   website: {
-    url: "https://www.Normina.ma",
-    display: "www.Normina.ma",
-    domain: "Normina.ma",
+    url: "https://www.nomira.ma",
+    display: "www.nomira.ma",
+    domain: "nomira.ma",
   },
   contact: {
-    email: "contact@normina.ma",
+    email: "contact@nomira.ma",
     phone: "+212 6 61 57 42 47",
     phoneRaw: "+212661574247",
     whatsapp: "212661574247",
@@ -39,7 +39,7 @@ export const BRANDING = {
     { name: "Avantage", href: "#avantage" },
     { name: "Solutions", href: "#solutions" },
     { name: "Subventions", href: "#subventions" },
-    { name: "Pourquoi Normina", href: "#pourquoi-nous" },
+    { name: "Pourquoi Nomira", href: "#pourquoi-nous" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ],
