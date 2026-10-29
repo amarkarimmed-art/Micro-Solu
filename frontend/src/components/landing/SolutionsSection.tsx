@@ -1,57 +1,145 @@
-import Link from "next/link";
+"use client";
+
+import { NomiraDivider } from "@/components/ui/NomiraDivider";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Stethoscope, GraduationCap, Store, ArrowRight, Check, Sparkles } from "lucide-react";
+import { useNavigation } from "@/context/NavigationContext";
 
 export function SolutionsSection() {
+  const { setActiveSection } = useNavigation();
+
   const solutions = [
-    { icon: "🩺", title: "Cabinets médicaux & dentaires", desc: "Agenda de rendez-vous, dossiers patients, rappels automatiques par SMS, facturation intégrée." },
-    { icon: "🏫", title: "Écoles & centres de formation", desc: "Portail d'inscription en ligne, paiement des frais de scolarité, communication avec les parents." },
-    { icon: "🛒", title: "Commerces & prestataires de service", desc: "Caisse, gestion de stock, réservation en ligne." },
+    {
+      icon: <Stethoscope className="w-6 h-6 text-[#2C4A7C]" />,
+      title: "Santé & Cabinets médicaux",
+      desc: "Agenda en ligne synchronisé, fiches patient sécurisées, rappels SMS automatisés et gestion des encaissements sans ressaisie.",
+      features: [
+        "Réduction de 75 % des rendez-vous non honorés",
+        "Dossiers patients conformes et chiffrés",
+        "Rappels automatisés 24 h avant consultation",
+      ],
+      metric: "−12 h / mois",
+    },
+    {
+      icon: <GraduationCap className="w-6 h-6 text-[#2C4A7C]" />,
+      title: "Formation & Établissements",
+      desc: "Portail d&apos;inscription autonome, encaissement échelonné, attestations générées en 1 clic et suivi des présences.",
+      features: [
+        "Paiements mensualisés automatisés",
+        "Génération instantanée des conventions",
+        "Tableau de bord de rentabilité par session",
+      ],
+      metric: "100 % automatisé",
+    },
+    {
+      icon: <Store className="w-6 h-6 text-[#FF9500]" />,
+      title: "Commerces & Prestataires",
+      desc: "Gestion de stock temps réel, devis et factures reliés, relances impayés programmées et réservation directe.",
+      features: [
+        "Relances impayés envoyées en 3 clics",
+        "Catalogue synchronisé sans double saisie",
+        "Accès mobile pour vos équipes terrain",
+      ],
+      metric: "0 impayé oublié",
+    },
   ];
 
   return (
-    <section id="nos-solutions" className="py-24 bg-slate-50 border-t border-slate-200">
+    <section id="solutions" className="py-24 sm:py-32 bg-[#F3F6FA] border-b border-[#E2E9F3] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header with Nomira Logo */}
+        <NomiraDivider
+          badge="04 · Les Micro-Solutions"
+          align="center"
+          theme="light"
+          markHeight={28}
+        />
+
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-blue-600 font-bold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
-            Nos solutions
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-6 leading-tight">
-            Un socle solide, adapté à votre métier
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#1A2838] tracking-tight mb-6">
+            Des strates logicielles adaptées à vos contraintes de gestion
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Plutôt que de repartir de zéro à chaque projet, nous nous appuyons sur des briques logicielles éprouvées (agenda, facturation, gestion des paiements, communication client...) que nous configurons précisément pour votre activité. Vous obtenez un outil sur mesure, sans payer le prix d'un développement 100% from scratch.
+          <p className="text-lg text-[#4A6890] leading-relaxed">
+            Plutôt que d&apos;imposer un progiciel lourd et complexe, Normina assemble uniquement les fonctionnalités indispensables à votre rentabilité.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Solutions Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {solutions.map((s, i) => (
-            <div 
-              key={i} 
-              className="group relative p-8 rounded-3xl bg-white border border-slate-200 overflow-hidden card-hover hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/10 active:scale-[0.97]"
+            <Card
+              key={i}
+              variant="light"
+              hoverEffect
+              className="flex flex-col justify-between p-7 group border-[#E2E9F3] hover:border-[#2C4A7C]"
             >
-              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-2xl bg-blue-100/60 text-blue-600 flex items-center justify-center text-3xl mb-6 mx-auto group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                {s.icon}
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-[10px] bg-[#F3F6FA] border border-[#E2E9F3] flex items-center justify-center group-hover:bg-[#2C4A7C] group-hover:text-white transition-colors duration-300">
+                    <span className="group-hover:text-white transition-colors">
+                      {s.icon}
+                    </span>
+                  </div>
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#E2E9F3] text-[#2C4A7C] font-heading">
+                    {s.metric}
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-bold text-[#1A2838] mb-3 group-hover:text-[#2C4A7C] transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-sm text-[#4A6890] leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+
+                <div className="space-y-2 border-t border-[#E2E9F3] pt-4 mb-6">
+                  {s.features.map((feat, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-[#1A2838]">
+                      <Check className="w-4 h-4 text-[#FF9500] shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">{s.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{s.desc}</p>
-            </div>
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setActiveSection(8)} // To contact
+                className="w-full justify-center group-hover:bg-[#2C4A7C] group-hover:text-white group-hover:border-[#2C4A7C]"
+              >
+                Chiffrer ce cas d&apos;usage
+              </Button>
+            </Card>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-slate-600 italic max-w-3xl mx-auto mb-8 text-lg">
-            Votre activité ne rentre pas exactement dans ces cases ? C'est justement le principe : chaque solution est configurée pour votre réalité, pas l'inverse.
-          </p>
-          <Link 
-            href="/demands" 
-            className="relative overflow-hidden group inline-flex px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold transition-all duration-300 ease-out hover:bg-blue-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/40 active:scale-95 shadow-lg shadow-blue-600/30"
+        {/* Custom Demand Card with Nomira Logo Emblem */}
+        <div className="max-w-4xl mx-auto p-8 rounded-[12px] bg-white border border-[#E2E9F3] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-5">
+            <div className="shrink-0 p-3 rounded-xl bg-[#F3F6FA] border border-[#E2E9F3] flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-[#FF9500]" />
+            </div>
+            <div className="text-left">
+              <h4 className="text-lg font-bold text-[#1A2838] mb-1">
+                Votre métier exige un workflow particulier ?
+              </h4>
+              <p className="text-sm text-[#4A6890]">
+                C&apos;est le cœur de mission de Normina : composer votre outil sur mesure en 4 jours chrono.
+              </p>
+            </div>
+          </div>
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setActiveSection(8)}
+            icon={<ArrowRight className="w-4 h-4" />}
+            className="shrink-0"
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            <span className="relative z-10 flex items-center gap-2">
-              Décrire mon besoin
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </span>
-          </Link>
+            Décrire votre processus
+          </Button>
         </div>
       </div>
     </section>

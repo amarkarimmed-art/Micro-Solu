@@ -1,84 +1,164 @@
+"use client";
+
 import Link from "next/link";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { ArrowUpRight, Mail, Phone, MapPin, ShieldCheck, QrCode } from "lucide-react";
+import { BRANDING } from "@/config/branding";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-[#1A2838] text-[#93A9C7] border-t border-[#3A5C8A]/40 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Logo & Manifesto */}
           <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-base shadow-md shadow-blue-500/20">
-                M
-              </div>
-              <span className="text-lg font-bold text-white">MicroSolu</span>
+            <div className="flex items-center gap-3">
+              <Link href="/" className="inline-block py-1 group/footer-logo">
+                <NomiraLogo
+                  variant="horizontal"
+                  theme="dark"
+                  height={42}
+                  speed="normal"
+                  className="transition-transform duration-300 group-hover/footer-logo:scale-[1.02]"
+                />
+              </Link>
             </div>
-            <p className="text-sm text-slate-400 max-w-sm italic">
-              "Des logiciels sur mesure, livrés vite, sans mauvaise surprise."
+            <p className="text-sm text-[#C3D0E2] max-w-sm leading-relaxed">
+              « Un problème visé. Un coût en moins. Des micro-solutions logicielles conçues pour libérer les dirigeants des gaspillages de temps et de ressources. »
             </p>
+            <div className="pt-2 flex items-center gap-2 text-xs text-[#8FB0DC]">
+              <ShieldCheck className="w-4 h-4 text-[#FF9500]" />
+              <span>Diagnostic sans engagement · Accompagnement jusqu&apos;à 70 % subventionné</span>
+            </div>
           </div>
+
+          {/* Navigation Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Navigation
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-4 border-b border-[#3A5C8A]/40 pb-2">
+              Solutions & Parcours
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="#comment-ca-marche" className="hover:text-white transition-colors">
-                  Comment ça marche
+                <Link href="#constat" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group">
+                  <span>Le constat</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="#nos-solutions" className="hover:text-white transition-colors">
-                  Nos solutions
+                <Link href="#parcours" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group">
+                  <span>Comment ça marche</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="#subventions" className="hover:text-white transition-colors">
-                  Subventions
+                <Link href="#solutions" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group">
+                  <span>Nos micro-solutions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="#pourquoi-nous" className="hover:text-white transition-colors">
-                  Pourquoi nous
+                <Link href="#subventions" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group">
+                  <span>Financements & Subventions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-white transition-colors">
-                  FAQ
+                <Link href="#faq" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group">
+                  <span>Foire aux questions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/carte-visite" className="hover:text-[#FFA23C] transition-colors flex items-center gap-1 group text-[#FFA23C]">
+                  <span>Carte de visite officielle</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Contact Direct & QR Code */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Contact & Support
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-4 border-b border-[#3A5C8A]/40 pb-2">
+              Contact & Échange
             </h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li className="flex items-center gap-2">
-                <span>💬 WhatsApp :</span>
-                <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
-                  +212 6 00 00 00 00
+            <ul className="space-y-3 text-sm text-[#C3D0E2]">
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#FF9500] shrink-0" />
+                <a
+                  href={`mailto:${BRANDING.contact.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {BRANDING.contact.email}
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <span>📧 Email :</span>
-                <a href="mailto:contact@microsolu.ma" className="hover:text-white transition-colors">
-                  contact@microsolu.ma
+              <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#FF9500] shrink-0" />
+                <a
+                  href={BRANDING.contact.telLink}
+                  className="hover:text-white transition-colors font-medium"
+                >
+                  {BRANDING.contact.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <span>📞 Tél :</span>
-                <a href="tel:+212522000000" className="hover:text-white transition-colors">
-                  +212 5 22 00 00 00
+              <li className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-[#FF9500] shrink-0" />
+                <span>{BRANDING.contact.address}</span>
+              </li>
+              <li className="pt-2">
+                <a
+                  href={BRANDING.contact.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#FF9500] hover:text-[#FFB300] transition-colors bg-[#2C4A7C]/40 px-3 py-1.5 rounded-full border border-[#3A5C8A]/50"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-pulse" />
+                  WhatsApp Direct (+212 6 61 57 42 47)
                 </a>
+              </li>
+              <li className="pt-2 flex items-center gap-3 bg-[#141F2D] p-2.5 rounded-xl border border-[#3A5C8A]/30">
+                <img
+                  src="/brand/qr-normina.png"
+                  alt="QR Code Normina.ma"
+                  className="w-12 h-12 rounded-lg bg-white p-1 shrink-0"
+                />
+                <div className="text-[11px] leading-tight">
+                  <span className="font-bold text-white block">Scanner pour visiter</span>
+                  <a
+                    href={BRANDING.website.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#FFA23C] hover:underline"
+                  >
+                    {BRANDING.website.display}
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-          <p>&copy; {new Date().getFullYear()} MicroSolu. Tous droits réservés.</p>
-          <div className="flex gap-4">
-            <Link href="#" className="hover:text-slate-400">Mentions légales</Link>
-            <Link href="#" className="hover:text-slate-400">Politique de confidentialité</Link>
+
+        {/* Bottom row with brand signature */}
+        <div className="pt-8 border-t border-[#3A5C8A]/30 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8FB0DC] gap-4">
+          <div className="flex items-center gap-2.5">
+            <NomiraLogo variant="mark" theme="dark" height={20} />
+            <p>© {new Date().getFullYear()} {BRANDING.name}. Tous droits réservés. Regagnez vos ressources.</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="#contact" className="hover:text-white transition-colors">
+              Mentions légales
+            </Link>
+            <Link href="#contact" className="hover:text-white transition-colors">
+              Confidentialité
+            </Link>
+            <a
+              href={BRANDING.website.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FF9500] hover:underline font-semibold"
+            >
+              {BRANDING.website.display}
+            </a>
           </div>
         </div>
       </div>

@@ -31,11 +31,11 @@ export function HorizontalCarousel({ children, onIndexChange, initialIndex = 0 }
   // Expose scroll function to parent if needed via ref
   useEffect(() => {
     if (initialIndex !== activeIndex && containerRef.current) {
-        containerRef.current.scrollTo({
-            left: initialIndex * containerRef.current.offsetWidth,
-            behavior: "smooth"
-        });
-        setActiveIndex(initialIndex);
+      containerRef.current.scrollTo({
+        left: initialIndex * containerRef.current.offsetWidth,
+        behavior: "smooth"
+      });
+      setActiveIndex(initialIndex);
     }
   }, [initialIndex]);
 
@@ -53,13 +53,13 @@ export function HorizontalCarousel({ children, onIndexChange, initialIndex = 0 }
         ))}
       </div>
       
-      {/* Dots indicator */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 md:hidden">
+      {/* Dots indicator with Nomira colors */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 md:hidden z-20">
         {children.map((_, i) => (
           <div
             key={i}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === activeIndex ? "bg-blue-600 w-4" : "bg-slate-300"
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === activeIndex ? "bg-[#FF9500] w-6" : "bg-[#C3D0E2]/60 w-2"
             }`}
           />
         ))}

@@ -1,0 +1,48 @@
+NOMIRA — IDENTITE DE MARQUE
+Kit complet, version 2.0
+
+Ouvrez d'abord charte-graphique-nomira.html dans un navigateur.
+Le document est autonome, les polices sont embarquees, il fonctionne
+hors ligne. Fichier > Imprimer > PDF pour la version a diffuser.
+
+SLOGAN
+Regagnez vos ressources
+
+LE LOGO
+Quatre strates identiques forment un bloc : la structure de couts de
+l'entreprise. La deuxieme s'en detache de 22 % et se desagrege en
+carres de plus en plus fins : le poste que Nomira retire.
+
+La dispersion est un DESSIN FIGE de 54 carres. Elle ne se regenere
+pas au hasard : toute declinaison repart du fichier maitre /svg.
+
+Aucun fichier ne contient de fond. Si un fond sombre apparait a
+l'ecran, c'est votre visionneuse en mode sombre.
+
+/svg      Fichiers maitres. Nom et slogan vectorises, aucune police
+          requise pour les afficher.
+          logo, logo-carre, logo-fond-sombre, logo-monochrome-noir,
+          logo-monochrome-blanc, logo-aplat, favicon-simplifie,
+          lockup-horizontal (+ fond-sombre, noir, blanc, sans-slogan),
+          lockup-vertical (+ fond-sombre, noir, blanc), banniere.
+/png      Exports transparents haute definition.
+/web      favicon.ico, favicons, apple-touch-icon, icones PWA et store.
+/reseaux  Avatars 400 et 800 px, banniere LinkedIn 1128 x 191.
+
+QUELLE VERSION
+Fond clair                 logo / lockup-horizontal
+Fond sombre ou photo       logo-fond-sombre / lockup-...-fond-sombre
+Carre, avatar, application logo-carre
+Sous 48 px                 favicon-simplifie
+Impression une couleur     logo-monochrome-noir ou logo-aplat
+
+POLICES
+Space Grotesk (titres) et Inter (textes), licence SIL Open Font,
+gratuites en usage commercial.
+npm i @fontsource/space-grotesk @fontsource/inter
+
+COULEURS
+Bleu nuit      #1A2838   principale
+Bleu Nomira    #3A5C8A   haut du degrade des strates
+Orange         #FFA23C -> #ED7410   strate extraite
+Orange aplat   #F7871F   repli monochrome et impression

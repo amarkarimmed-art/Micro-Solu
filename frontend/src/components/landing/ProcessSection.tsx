@@ -1,89 +1,117 @@
-import Link from "next/link";
+"use client";
+
+import { NomiraDivider } from "@/components/ui/NomiraDivider";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Search, Compass, Zap, Rocket, RefreshCw, ArrowRight } from "lucide-react";
+import { useNavigation } from "@/context/NavigationContext";
 
 export function ProcessSection() {
+  const { setActiveSection } = useNavigation();
+
   const steps = [
     {
-      num: "1",
-      title: "Diagnostic",
-      bold: "On identifie précisément votre problème.",
-      desc: "Un échange (gratuit, sans engagement) pour comprendre votre activité, vos points de friction et ce qui vous ferait vraiment gagner du temps.",
-      icon: "🎯",
+      num: "01",
+      title: "Diagnostic chiffré",
+      bold: "Un problème ciblé, un calcul immédiat.",
+      desc: "Échange de 30 minutes sans frais pour quantifier vos heures perdues et vos gains possibles.",
+      icon: <Search className="w-5 h-5 text-[#2C4A7C]" />,
     },
     {
-      num: "2",
-      title: "Cadrage",
-      bold: "On fixe le périmètre, le prix et le délai — avant de commencer.",
-      desc: "Vous recevez une proposition claire : ce qui sera livré, combien ça coûte, et quand. Aucune mauvaise surprise en cours de route.",
-      icon: "📐",
+      num: "02",
+      title: "Cadrage à prix fixe",
+      bold: "Périmètre, coût et calendrier garantis.",
+      desc: "Une proposition contractuelle transparente : vous connaissez le montant final avant de signer.",
+      icon: <Compass className="w-5 h-5 text-[#2C4A7C]" />,
     },
     {
-      num: "3",
-      title: "Développement (2 à 3 semaines)",
-      bold: "On construit votre solution.",
-      desc: "Grâce à notre méthode de développement assisté par IA, nous allons vite sans sacrifier la qualité ni les tests.",
-      icon: "⚙️",
+      num: "03",
+      title: "Déploiement en 4 jours",
+      bold: "Construction ciblée sans dispersion.",
+      desc: "Nos strates logicielles modulaires permettent une mise en service opérationnelle en quelques jours.",
+      icon: <Zap className="w-5 h-5 text-[#FF9500]" />,
     },
     {
-      num: "4",
-      title: "Mise en production + formation",
-      bold: "On vous met en route.",
-      desc: "Installation, migration de vos données existantes si besoin, et formation de votre équipe pour une prise en main immédiate.",
-      icon: "🚀",
+      num: "04",
+      title: "Mise en service & formation",
+      bold: "Prise en main immédiate par vos équipes.",
+      desc: "Vos données existantes sont migrées et chaque collaborateur est autonome dès le premier jour.",
+      icon: <Rocket className="w-5 h-5 text-[#2C4A7C]" />,
     },
     {
-      num: "5",
-      title: "Maintenance récurrente",
-      bold: "On reste à vos côtés.",
-      desc: "Un abonnement mensuel de maintenance garantit que votre outil continue de fonctionner, d'évoluer et de rester sécurisé.",
-      icon: "🤝",
+      num: "05",
+      title: "Suivi & Garantie continue",
+      bold: "Votre outil évolue sans dérive.",
+      desc: "Accompagnement continu assurant la disponibilité, la sécurité et la conformité de vos flux.",
+      icon: <RefreshCw className="w-5 h-5 text-[#2C4A7C]" />,
     },
   ];
 
   return (
-    <section id="comment-ca-marche" className="py-24 bg-slate-50 border-t border-slate-200">
+    <section id="parcours" className="py-24 sm:py-32 bg-[#F3F6FA] border-b border-[#E2E9F3] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="text-blue-600 font-bold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
-          Le parcours
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4">
-          Un parcours simple, cadré, sans surprise
-        </h2>
-        <p className="text-slate-600 text-lg mb-16 max-w-2xl mx-auto">
-          Du premier échange à la mise en service, vous savez toujours où vous en êtes.
-        </p>
+        {/* Section Divider featuring Nomira Logo */}
+        <NomiraDivider
+          badge="02 · Le Parcours"
+          align="center"
+          theme="light"
+          markHeight={28}
+        />
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 text-left">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#1A2838] tracking-tight mb-4">
+            Un processus cadré au jour près, sans devis fluctuant
+          </h2>
+          <p className="text-lg text-[#4A6890] leading-relaxed">
+            Du premier diagnostic jusqu&apos;à la mise en production, chaque étape est chiffrée et planifiée.
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5 text-left mb-14">
           {steps.map((step, i) => (
-            <div 
-              key={i} 
-              className="group p-6 bg-white rounded-3xl border border-slate-200 shadow-sm card-hover hover:border-blue-400/40 active:scale-[0.97] flex flex-col transition-all duration-300"
+            <Card
+              key={i}
+              variant="light"
+              hoverEffect
+              className="flex flex-col justify-between p-6 group border-[#E2E9F3] hover:border-[#2C4A7C]"
             >
-              <div className="relative inline-flex self-center mb-4">
-                <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                  {step.icon}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-[8px] bg-[#F3F6FA] border border-[#E2E9F3] flex items-center justify-center group-hover:bg-[#2C4A7C] group-hover:text-white transition-colors duration-300">
+                    <span className="group-hover:text-white transition-colors">
+                      {step.icon}
+                    </span>
+                  </div>
+                  <span className="font-heading font-bold text-sm text-[#FF9500]">
+                    {step.num}
+                  </span>
                 </div>
-                <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-bold flex items-center justify-center shadow-md">
-                  {step.num}
-                </span>
+                <h3 className="font-bold text-[#1A2838] text-base mb-1 group-hover:text-[#2C4A7C] transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-xs font-semibold text-[#ED7410] mb-2">
+                  {step.bold}
+                </p>
               </div>
-              <h3 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">{step.title}</h3>
-              <p className="text-slate-700 text-sm mb-2">{step.bold}</p>
-              <p className="text-slate-500 text-sm">{step.desc}</p>
-            </div>
+              <p className="text-xs text-[#4A6890] leading-relaxed mt-2">
+                {step.desc}
+              </p>
+            </Card>
           ))}
         </div>
 
-        <div className="mt-16">
-          <Link 
-            href="/demands" 
-            className="relative overflow-hidden group inline-flex px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold transition-all duration-300 ease-out hover:bg-blue-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/40 active:scale-95 shadow-lg shadow-blue-600/30"
+        {/* CTA */}
+        <div>
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => setActiveSection(8)} // Jump to contact
+            icon={<ArrowRight className="w-4 h-4" />}
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            <span className="relative z-10 flex items-center gap-2">
-              Démarrer mon diagnostic
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </span>
-          </Link>
+            Lancer un diagnostic sans frais
+          </Button>
         </div>
       </div>
     </section>

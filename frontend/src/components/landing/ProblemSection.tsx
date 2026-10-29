@@ -1,50 +1,110 @@
+"use client";
+
+import { NomiraDivider } from "@/components/ui/NomiraDivider";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { Card } from "@/components/ui/Card";
+import { ClipboardList, EyeOff, AlertCircle, Layers, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { useNavigation } from "@/context/NavigationContext";
+
 export function ProblemSection() {
+  const { setActiveSection } = useNavigation();
+
   const symptoms = [
-    { icon: "📋", title: "Gestion manuelle", desc: "Vous gérez encore vos rendez-vous ou inscriptions sur papier ou WhatsApp" },
-    { icon: "🔍", title: "Manque de visibilité", desc: "Vous n'avez aucune visibilité claire sur votre activité (qui doit quoi, à quelle date)" },
-    { icon: "💸", title: "Pertes financières", desc: "Vous perdez des clients ou des paiements par manque de suivi" },
-    { icon: "🧩", title: "Logiciels inadaptés", desc: "Les logiciels du marché sont soit trop génériques, soit hors de prix, soit trop complexes" },
+    {
+      icon: <ClipboardList className="w-6 h-6 text-[#2C4A7C]" />,
+      title: "Gestion manuelle répétitive",
+      desc: "Vos équipes passent 14 heures par mois sur des ressaisies WhatsApp ou papier.",
+      impact: "14 h / mois perdues",
+    },
+    {
+      icon: <EyeOff className="w-6 h-6 text-[#2C4A7C]" />,
+      title: "Visibilité financière floue",
+      desc: "Sans tableau de bord direct, vous ignorez qui vous doit quoi et à quelle date précise.",
+      impact: "Impayés en retard",
+    },
+    {
+      icon: <AlertCircle className="w-6 h-6 text-[#FF9500]" />,
+      title: "Pertes de clients et de revenus",
+      desc: "Le défaut de relance automatisée cause en moyenne 8 % de déperdition de chiffre d&apos;affaires.",
+      impact: "−8 % de revenus",
+    },
+    {
+      icon: <Layers className="w-6 h-6 text-[#2C4A7C]" />,
+      title: "Logiciels de masse inadaptés",
+      desc: "Les outils génériques sont soit surdimensionnés, soit trop rigides pour vos processus métiers réels.",
+      impact: "Abonnements inutiles",
+    },
   ];
 
   return (
-    <section id="probleme" className="py-24 bg-white relative overflow-hidden">
+    <section id="constat" className="py-24 sm:py-32 bg-white relative overflow-hidden border-b border-[#E2E9F3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header with Parallel Strata Divider featuring Nomira Logo */}
+        <NomiraDivider
+          badge="01 · Le Constat"
+          align="center"
+          theme="light"
+          markHeight={28}
+        />
+
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-blue-600 font-bold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
-            Le constat
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-6 leading-tight">
-            Vous perdez du temps et de l'argent sur des tâches qui devraient être automatiques
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#1A2838] tracking-tight mb-6">
+            Vos relances et vos tableaux Excel vous coûtent cher chaque semaine
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Carnet de rendez-vous, fichiers Excel dispersés, relances clients oubliées, facturation manuelle... Chaque heure passée sur ces tâches est une heure en moins pour développer votre activité.
+          <p className="text-lg text-[#4A6890] leading-relaxed">
+            Chaque heure absorbée par des tâches administratives manuelles est une ressource financière et humaine retirée à votre développement.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* 4 Crisp Cards with Lucide Outline Icons & Direct Metrics */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
           {symptoms.map((item, i) => (
-            <div 
-              key={i} 
-              className="group flex flex-col items-center text-center p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 backdrop-blur-sm card-hover hover:border-blue-500/40 hover:bg-white active:scale-[0.98] transition-all duration-300"
+            <Card
+              key={i}
+              variant="light"
+              hoverEffect
+              className="flex flex-col sm:flex-row items-start gap-5 p-7 group transition-all duration-300 hover:border-[#2C4A7C]/40"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-100/60 text-blue-600 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                {item.icon}
+              <div className="w-12 h-12 rounded-[10px] bg-[#F3F6FA] border border-[#E2E9F3] flex items-center justify-center shrink-0 group-hover:bg-[#2C4A7C] group-hover:text-white transition-colors duration-300">
+                <span className="group-hover:text-white transition-colors">
+                  {item.icon}
+                </span>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <div className="flex-1">
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <h3 className="text-base font-bold text-[#1A2838]">
+                    {item.title}
+                  </h3>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#F3F6FA] text-[#ED7410] border border-[#FF9500]/20">
+                    {item.impact}
+                  </span>
+                </div>
+                <p className="text-sm text-[#4A6890] leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
-        <div className="text-center">
-          <div className="inline-block p-6 rounded-3xl bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 border border-blue-100 shadow-sm max-w-2xl">
-            <p className="text-lg font-semibold text-blue-950 italic">
-              « Et si votre outil n'existait pas encore parce que personne ne vous l'avait proposé au bon prix et au bon délai ? »
-            </p>
+        {/* Manifesto Quote Box */}
+        <div className="max-w-3xl mx-auto p-8 rounded-[12px] bg-[#1A2838] text-white border border-[#3A5C8A]/50 shadow-md text-center flex flex-col items-center">
+          <div className="mb-4">
+            <NomiraLogo variant="mark" theme="dark" height={32} />
+          </div>
+          <p className="font-heading text-lg sm:text-xl font-semibold mb-5 text-[#F3F6FA]">
+            « Vous saurez avant de signer ce que vous économisez. C&apos;est l&apos;engagement Normina. »
+          </p>
+          <div className="flex justify-center">
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => setActiveSection(2)} // To parcours
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              Découvrir la méthode en 4 étapes
+            </Button>
           </div>
         </div>
       </div>

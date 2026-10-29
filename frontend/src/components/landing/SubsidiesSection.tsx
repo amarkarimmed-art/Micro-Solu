@@ -1,57 +1,101 @@
+"use client";
+
+import { NomiraDivider } from "@/components/ui/NomiraDivider";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { FileCheck, BadgePercent, Handshake, ArrowRight, ShieldCheck } from "lucide-react";
+import { useNavigation } from "@/context/NavigationContext";
+
 export function SubsidiesSection() {
+  const { setActiveSection } = useNavigation();
+
   return (
-    <section id="subventions" className="relative py-24 bg-blue-950 text-white overflow-hidden">
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
+    <section id="subventions" className="relative py-24 sm:py-32 bg-[#1A2838] text-white overflow-hidden border-b border-[#3A5C8A]/40">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#2C4A7C]/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-80 h-80 bg-[#FF9500]/10 rounded-full blur-[100px] pointer-events-none" />
+
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-sm font-semibold mb-6 animate-float">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-            Subvention d'État
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 leading-tight">
-            Votre transformation numérique peut être <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">financée jusqu'à 90%</span> par l'État
-          </h2>
-        </div>
+        {/* Section Header with Nomira Logo Mark */}
+        <NomiraDivider
+          badge="05 · Financements & Aides"
+          align="center"
+          theme="dark"
+          markHeight={28}
+        />
 
-        <div className="space-y-4 text-lg text-blue-100 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
-          <p className="bg-white/5 border border-white/10 rounded-2xl p-6 card-hover hover:border-emerald-400/30 backdrop-blur-sm">
-            Dans le cadre des programmes <strong className="text-white">MOWAKABA</strong> et <strong className="text-white">Digital Morocco 2030</strong>, une grande partie du coût de votre projet peut être prise en charge par des subventions publiques dédiées à la digitalisation des TPE/PME marocaines.
-          </p>
-          <p className="bg-white/5 border border-white/10 rounded-2xl p-6 card-hover hover:border-emerald-400/30 backdrop-blur-sm">
-            Nous vous accompagnons pour vérifier votre éligibilité et monter le dossier — en plus du développement de votre solution.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-5 mb-12">
-          {[
-            { icon: "🔎", title: "Vérification incluse", desc: "Vérification d'éligibilité incluse dans le diagnostic gratuit" },
-            { icon: "📝", title: "Accompagnement", desc: "Accompagnement dans les démarches" },
-            { icon: "🙌", title: "Sans expertise", desc: "Aucune expertise administrative requise de votre part" },
-          ].map((b, i) => (
-            <div 
-              key={i} 
-              className="group p-6 rounded-3xl bg-white/10 border border-white/15 backdrop-blur-md card-hover hover:border-emerald-400/40 active:scale-[0.96]"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center text-2xl mb-4 mx-auto group-hover:scale-110 group-hover:bg-emerald-400 group-hover:text-blue-950 transition-all duration-300">
-                {b.icon}
-              </div>
-              <h3 className="font-bold mb-1 text-white">{b.title}</h3>
-              <p className="text-blue-100 text-sm">{b.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <a 
-            href="#cta" 
-            className="relative overflow-hidden group inline-flex px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-emerald-500/40 active:scale-95 shadow-lg shadow-emerald-500/25"
-          >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            <span className="relative z-10 flex items-center gap-2">
-              Vérifier mon éligibilité
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        <div className="text-center mb-16 flex flex-col items-center">
+          <div className="mb-4">
+            <NomiraLogo variant="mark" theme="dark" height={34} />
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold text-center mb-6 leading-tight tracking-tight">
+            Votre transition logicielle peut être{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFA23C] to-[#FF9500]">
+              subventionnée jusqu&apos;à 70 %
             </span>
-          </a>
+          </h2>
+          <p className="text-lg text-[#C3D0E2] max-w-2xl mx-auto leading-relaxed">
+            Dans le cadre des plans d&apos;aide à la digitalisation des TPE et PME, des financements publics et régionaux absorbent la majorité de votre investissement.
+          </p>
+        </div>
+
+        {/* 3 Value Cards */}
+        <div className="grid sm:grid-cols-3 gap-6 mb-14">
+          <Card
+            variant="dark"
+            className="p-6 text-center border-[#3A5C8A]/60 bg-[#142030]/90 backdrop-blur-sm group hover:border-[#FF9500]/50"
+          >
+            <div className="w-12 h-12 rounded-[10px] bg-white/5 border border-white/10 text-[#FF9500] flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+              <FileCheck className="w-6 h-6" />
+            </div>
+            <h3 className="font-bold text-base mb-2 text-white">Éligibilité vérifiée</h3>
+            <p className="text-xs text-[#93A9C7] leading-relaxed">
+              Audit instantané de vos critères d&apos;aide lors du diagnostic initial sans frais.
+            </p>
+          </Card>
+
+          <Card
+            variant="dark"
+            className="p-6 text-center border-[#3A5C8A]/60 bg-[#142030]/90 backdrop-blur-sm group hover:border-[#FF9500]/50"
+          >
+            <div className="w-12 h-12 rounded-[10px] bg-white/5 border border-white/10 text-[#FF9500] flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+              <BadgePercent className="w-6 h-6" />
+            </div>
+            <h3 className="font-bold text-base mb-2 text-white">Dossier clé en main</h3>
+            <p className="text-xs text-[#93A9C7] leading-relaxed">
+              Nomira rédige les descriptifs techniques et monte votre dossier de demande.
+            </p>
+          </Card>
+
+          <Card
+            variant="dark"
+            className="p-6 text-center border-[#3A5C8A]/60 bg-[#142030]/90 backdrop-blur-sm group hover:border-[#FF9500]/50"
+          >
+            <div className="w-12 h-12 rounded-[10px] bg-white/5 border border-white/10 text-[#FF9500] flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+              <Handshake className="w-6 h-6" />
+            </div>
+            <h3 className="font-bold text-base mb-2 text-white">Zéro avance lourde</h3>
+            <p className="text-xs text-[#93A9C7] leading-relaxed">
+              Le calendrier de paiement s&apos;aligne sur le versement effectif des subventions.
+            </p>
+          </Card>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => setActiveSection(8)} // To contact
+            icon={<ArrowRight className="w-4 h-4" />}
+          >
+            Vérifier mon montant subventionnable
+          </Button>
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-[#8FB0DC]">
+            <ShieldCheck className="w-4 h-4 text-[#1D9E75]" />
+            <span>Étude de dossier 100 % confidentielle et sans obligation contractuelle</span>
+          </div>
         </div>
       </div>
     </section>

@@ -1,45 +1,139 @@
+"use client";
+
+import { NomiraDivider } from "@/components/ui/NomiraDivider";
+import { NomiraLogo } from "@/components/ui/NomiraLogo";
+import { Card } from "@/components/ui/Card";
+import { Timer, CheckSquare, ShieldCheck, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { useNavigation } from "@/context/NavigationContext";
+
 export function ValuePropSection() {
+  const { setActiveSection } = useNavigation();
+
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-blue-600 font-bold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
-            Notre avantage
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-8 leading-tight">
-            Comment on tient un délai de 1 mois, sérieusement ?
+    <section id="avantage" className="py-24 sm:py-32 bg-white relative overflow-hidden border-b border-[#E2E9F3]">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header with Nomira Logo Mark */}
+        <NomiraDivider
+          badge="03 · L'Avantage Nomira"
+          align="center"
+          theme="light"
+          markHeight={28}
+        />
+
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#1A2838] tracking-tight mb-6">
+            Pourquoi nos déploiements se comptent en jours et non en trimestres
           </h2>
-        </div>
-
-        <div className="space-y-5 text-lg text-slate-600 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-          <p className="bg-slate-50 border border-slate-100 rounded-2xl p-6 card-hover hover:border-blue-200">
-            La plupart des agences sont lentes parce qu'elles repartent de zéro à chaque projet, et parce que chaque étape (cadrage, développement, tests) se fait manuellement, en série.
-          </p>
-          <p className="bg-slate-50 border border-slate-100 rounded-2xl p-6 card-hover hover:border-blue-200">
-            Nous avons construit un <strong className="text-blue-700">pipeline de développement assisté par intelligence artificielle</strong> qui couvre tout le cycle : recueil de vos besoins, priorisation, planification, développement, tests, mise en production. Résultat : moins de temps perdu en allers-retours, moins d'erreurs humaines, et un délai qu'on peut vous garantir dès le départ.
+          <p className="text-lg text-[#4A6890] leading-relaxed">
+            Les agences traditionnelles repartent de zéro et facturent chaque ligne au temps passé. Nomira assemble des strates logicielles éprouvées et optimisées.
           </p>
         </div>
 
-        <h3 className="text-xl font-bold text-slate-900 text-center mb-8">
-          Ce que ça change concrètement pour vous
-        </h3>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { icon: "⏱", text: "Un délai qu'on peut annoncer avec confiance, pas \"on verra\"" },
-            { icon: "✅", text: "Moins d'erreurs, donc moins d'allers-retours et de frais cachés" },
-            { icon: "🛡", text: "Un code propre et documenté, donc maintenable dans la durée" },
-          ].map((b, i) => (
-            <div 
-              key={i} 
-              className="group p-8 rounded-3xl bg-gradient-to-b from-slate-50 to-white border border-slate-200 card-hover hover:border-blue-400/40 hover:shadow-xl hover:shadow-blue-500/5 active:scale-[0.98]"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-3xl mb-5 mx-auto group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                {b.icon}
-              </div>
-              <p className="font-medium text-slate-800 leading-relaxed">{b.text}</p>
+        {/* 2 Core Comparison Pillars */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <Card
+            variant="light"
+            hoverEffect={false}
+            className="p-8 border-[#E2E9F3] bg-[#F3F6FA]/50"
+          >
+            <div className="text-xs uppercase tracking-wider font-semibold text-[#8FB0DC] mb-2">
+              Modèle d&apos;agence classique
             </div>
-          ))}
+            <h3 className="text-xl font-bold text-[#1A2838] mb-4">
+              Cadrage flou & délais élastiques
+            </h3>
+            <ul className="space-y-3 text-sm text-[#4A6890]">
+              <li className="flex items-start gap-2">
+                <span className="text-[#D8412A] font-bold">×</span>
+                <span>Délais de livraison moyens constatés : 4 à 8 mois.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#D8412A] font-bold">×</span>
+                <span>Devis réévalué en cours de route avec avenants imprévus.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#D8412A] font-bold">×</span>
+                <span>Code surdimensionné difficilement maintenable par vos équipes.</span>
+              </li>
+            </ul>
+          </Card>
+
+          {/* Dedicated Nomira Card with Animated Brand Logo */}
+          <Card
+            variant="dark"
+            hoverEffect={false}
+            className="p-8 border-[#3A5C8A]/60 bg-[#1A2838] relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF9500]/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex items-center justify-between mb-4">
+              <NomiraLogo variant="horizontal" theme="dark" height={32} />
+              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#FF9500]/20 text-[#FFA23C] border border-[#FF9500]/30">
+                Garantie 4 Jours
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-4">
+              Strates logicielles modulaires & délai garanti
+            </h3>
+            <ul className="space-y-3 text-sm text-[#C3D0E2]">
+              <li className="flex items-start gap-2">
+                <span className="text-[#FF9500] font-bold">✓</span>
+                <span>Mise en production en 4 jours pour votre premier cas d&apos;usage.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#FF9500] font-bold">✓</span>
+                <span>Prix forfaitaire fixé avant signature, zéro frais dissimulé.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#FF9500] font-bold">✓</span>
+                <span>Architecture moderne, API documentées et pleine portabilité des données.</span>
+              </li>
+            </ul>
+          </Card>
+        </div>
+
+        {/* 3 Value outcome cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <Card variant="light" className="p-6 text-center group">
+            <div className="w-12 h-12 rounded-[10px] bg-[#F3F6FA] border border-[#E2E9F3] text-[#2C4A7C] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#2C4A7C] group-hover:text-white transition-colors duration-300">
+              <Timer className="w-6 h-6" />
+            </div>
+            <h4 className="font-bold text-[#1A2838] mb-2">Un calendrier ferme</h4>
+            <p className="text-xs text-[#4A6890] leading-relaxed">
+              Une date d&apos;ouverture annoncée et respectée contractuellement.
+            </p>
+          </Card>
+
+          <Card variant="light" className="p-6 text-center group">
+            <div className="w-12 h-12 rounded-[10px] bg-[#FF9500]/10 border border-[#FF9500]/20 text-[#ED7410] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#FF9500] group-hover:text-white transition-colors duration-300">
+              <CheckSquare className="w-6 h-6" />
+            </div>
+            <h4 className="font-bold text-[#1A2838] mb-2">Zéro frais masqué</h4>
+            <p className="text-xs text-[#4A6890] leading-relaxed">
+              Le montant voté est le montant facturé. Sans suppléments de fin de projet.
+            </p>
+          </Card>
+
+          <Card variant="light" className="p-6 text-center group">
+            <div className="w-12 h-12 rounded-[10px] bg-[#F3F6FA] border border-[#E2E9F3] text-[#2C4A7C] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#2C4A7C] group-hover:text-white transition-colors duration-300">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <h4 className="font-bold text-[#1A2838] mb-2">Propriété intégrale</h4>
+            <p className="text-xs text-[#4A6890] leading-relaxed">
+              Vous êtes 100 % propriétaire de vos données et de vos environnements.
+            </p>
+          </Card>
+        </div>
+
+        <div className="text-center">
+          <Button
+            variant="outline"
+            size="md"
+            onClick={() => setActiveSection(4)} // To Solutions
+            icon={<ArrowRight className="w-4 h-4" />}
+          >
+            Explorer les micro-solutions disponibles
+          </Button>
         </div>
       </div>
     </section>
